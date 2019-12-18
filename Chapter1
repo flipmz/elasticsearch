@@ -1,0 +1,15 @@
+# import elastic search package
+
+from elasticsearch import Elasticsearch
+
+# Create an object of Elasticsearch class with host, port parameter values
+
+es = Elasticsearch(Host="http://localhost", PORT=9200)
+es = Elasticsearch()
+# To create an empty index es.indices.create function with idex name and ignore parameter
+es = Elasticsearch()
+es.indices.create(index="fourth_index", ignore=400)
+# to check existence of index
+es.indices.exists(index="fourth_index")
+# To delete index
+es.indices.delete(index="fourth_index")
